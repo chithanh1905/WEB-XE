@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" fill="none">
+  <defs>
+    <!-- Chrome gradient for V mark -->
+    <linearGradient id="chrome1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="20%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#9a9a9a"/>
+      <stop offset="65%" stop-color="#d0d0d0"/>
+      <stop offset="85%" stop-color="#6e6e6e"/>
+      <stop offset="100%" stop-color="#b0b0b0"/>
+    </linearGradient>
+    <linearGradient id="chrome2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#c0c0c0"/>
+      <stop offset="60%" stop-color="#707070"/>
+      <stop offset="100%" stop-color="#a0a0a0"/>
+    </linearGradient>
+    <linearGradient id="innerV" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#888"/>
+      <stop offset="50%" stop-color="#444"/>
+      <stop offset="100%" stop-color="#222"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#00000033"/>
+    </filter>
+  </defs>
+
+  <!-- V outer shape (chrome) -->
+  <g filter="url(#shadow)">
+    <!-- Left arm outer -->
+    <path d="M10,8 L52,8 L70,128 L52,128 Z" fill="url(#chrome1)"/>
+    <!-- Right arm outer -->
+    <path d="M110,8 L152,8 L110,128 L92,128 Z" fill="url(#chrome2)"/>
+    <!-- Left arm inner dark -->
+    <path d="M22,8 L52,8 L68,118 L52,118 Z" fill="url(#innerV)" opacity="0.5"/>
+    <!-- Right arm inner dark -->
+    <path d="M110,8 L140,8 L112,118 L96,118 Z" fill="url(#innerV)" opacity="0.5"/>
+    <!-- Center V notch -->
+    <path d="M52,8 L110,8 L81,90 Z" fill="url(#chrome1)"/>
+    <!-- Center inner shadow -->
+    <path d="M60,8 L102,8 L81,75 Z" fill="#555" opacity="0.4"/>
+    <!-- highlight left edge -->
+    <path d="M10,8 L18,8 L36,128 L28,128 Z" fill="white" opacity="0.6"/>
+    <!-- highlight right edge -->
+    <path d="M144,8 L152,8 L116,128 L108,128 Z" fill="white" opacity="0.4"/>
+  </g>
+
+  <!-- VINFAST text -->
+  <text x="175" y="72" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="54" fill="#1a1a1a" letter-spacing="8">VINFAST</text>
+
+  <!-- VFG LONG AN text -->
+  <text x="178" y="112" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#2a2a2a" letter-spacing="5">VFG LONG AN</text>
+</svg>
