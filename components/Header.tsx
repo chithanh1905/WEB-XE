@@ -55,7 +55,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center shrink-0">
               <img
-                src="/logo-vinfast-vfg.svg"
+                src="/logo-vinfast-vfg.png"
                 alt="VinFast VFG Long An"
                 className="h-12 md:h-14 w-auto object-contain"
               />
