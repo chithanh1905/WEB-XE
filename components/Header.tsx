@@ -53,15 +53,17 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 shrink-0">
-              <img
-                src="https://vinfastlongan3s.com/OTO3602500656/files/logo_vfx_long_an.webp"
-                alt="VinFast VFG Long An"
-                className="h-10 md:h-12 w-auto object-contain"
-              />
-              <div className="hidden sm:block border-l border-gray-200 pl-3">
-                <div className="text-sm font-bold text-gray-800 leading-tight">VinFast VFG</div>
-                <div className="text-xs text-gray-500">Đại lý 3S chính hãng</div>
+            <Link href="/" className="flex items-center gap-2 shrink-0">
+              {/* VinFast V logo mark */}
+              <div style={{ background: "var(--vf-blue)" }} className="flex items-center justify-center rounded px-2 h-10 md:h-12">
+                <svg width="28" height="28" viewBox="0 0 100 100" fill="white">
+                  <polygon points="50,5 95,85 80,85 50,30 20,85 5,85" />
+                </svg>
+              </div>
+              {/* Text logo */}
+              <div className="flex flex-col leading-none">
+                <span className="font-black tracking-widest text-sm md:text-base" style={{ color: "var(--vf-blue)", letterSpacing: "0.12em" }}>VINFAST</span>
+                <span className="font-bold text-xs md:text-sm tracking-wide text-gray-700" style={{ letterSpacing: "0.05em" }}>VFG LONG AN</span>
               </div>
             </Link>
 
