@@ -11,26 +11,26 @@ export default function CarCard({ car }: CarCardProps) {
   return (
     <div className="car-card bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
       {/* Image */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-blue-50 h-52">
+      <div className="relative overflow-hidden bg-white h-48" style={{ aspectRatio: "16/9" }}>
         <img
           src={car.image}
           alt={car.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain p-2"
           onError={(e) => {
             const img = e.currentTarget;
             img.style.display = "none";
             const parent = img.parentElement;
             if (parent) {
               parent.innerHTML = `
-                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#e8f0fe,#c7d7f7);padding:20px">
-                  <svg width="80" height="40" viewBox="0 0 200 80" fill="#005BAC" opacity="0.4">
+                <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f8faff;padding:16px">
+                  <svg width="120" height="60" viewBox="0 0 200 80" fill="#005BAC" opacity="0.25">
                     <path d="M20 60 Q30 20 70 15 L90 10 Q110 5 140 12 L160 18 Q185 25 190 40 L192 55 L20 60Z"/>
                     <circle cx="55" cy="65" r="12" fill="#003087"/>
                     <circle cx="145" cy="65" r="12" fill="#003087"/>
                     <circle cx="55" cy="65" r="7" fill="#ccc"/>
                     <circle cx="145" cy="65" r="7" fill="#ccc"/>
                   </svg>
-                  <span style="color:#005BAC;font-weight:700;font-size:14px;margin-top:8px">${car.name}</span>
+                  <span style="color:#005BAC;font-weight:700;font-size:13px;margin-top:6px">${car.name}</span>
                 </div>
               `;
             }
