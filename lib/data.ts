@@ -57,7 +57,7 @@ export const CARS: Car[] = [
     ],
     specs: [
       { label: "Loại xe", value: "Xe điện" },
-      { label: "Phạm vi", value: "Lên đến 210 km" },
+      { label: "Phạm vi", value: "215 km" },
       { label: "Công suất", value: "42 mã lực" },
       { label: "Tăng tốc 0-100", value: "< 12 giây" },
       { label: "Tốc độ tối đa", value: "110 km/h" },
@@ -92,7 +92,7 @@ export const CARS: Car[] = [
     ],
     specs: [
       { label: "Loại xe", value: "SUV điện" },
-      { label: "Phạm vi", value: "Lên đến 326 km" },
+      { label: "Phạm vi", value: "326,4 km" },
       { label: "Công suất", value: "134 mã lực" },
       { label: "Tăng tốc 0-100", value: "< 11 giây" },
       { label: "Tốc độ tối đa", value: "130 km/h" },
@@ -126,7 +126,7 @@ export const CARS: Car[] = [
     ],
     specs: [
       { label: "Loại xe", value: "SUV điện" },
-      { label: "Phạm vi", value: "Lên đến 399 km" },
+      { label: "Phạm vi", value: "480 km" },
       { label: "Công suất", value: "201 mã lực" },
       { label: "Tăng tốc 0-100", value: "< 8.5 giây" },
       { label: "Tốc độ tối đa", value: "170 km/h" },
@@ -160,7 +160,7 @@ export const CARS: Car[] = [
     ],
     specs: [
       { label: "Loại xe", value: "SUV điện" },
-      { label: "Phạm vi", value: "Lên đến 431 km" },
+      { label: "Phạm vi", value: "440 km" },
       { label: "Công suất", value: "349 mã lực (2WD) / 402 mã lực (AWD)" },
       { label: "Tăng tốc 0-100", value: "< 5.9 giây (AWD)" },
       { label: "Tốc độ tối đa", value: "200 km/h" },
@@ -193,7 +193,7 @@ export const CARS: Car[] = [
     ],
     specs: [
       { label: "Loại xe", value: "SUV điện" },
-      { label: "Phạm vi", value: "Lên đến 471 km" },
+      { label: "Phạm vi", value: "562 km" },
       { label: "Công suất", value: "402 mã lực" },
       { label: "Tăng tốc 0-100", value: "< 5.5 giây" },
       { label: "Tốc độ tối đa", value: "200 km/h" },
@@ -227,7 +227,7 @@ export const CARS: Car[] = [
     ],
     specs: [
       { label: "Loại xe", value: "SUV điện cỡ lớn" },
-      { label: "Phạm vi", value: "Lên đến 568 km" },
+      { label: "Phạm vi", value: "626 km" },
       { label: "Công suất", value: "402 mã lực" },
       { label: "Tăng tốc 0-100", value: "< 6.5 giây" },
       { label: "Tốc độ tối đa", value: "200 km/h" },
