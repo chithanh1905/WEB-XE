@@ -8,7 +8,7 @@ export const DEALER_INFO = {
   hotline: "0946 999 286",
   hotlineLink: "tel:0946999286",
   workingHours: "7:30 - 18:00 (Tất cả các ngày trong tuần)",
-  facebook: "https://facebook.com/vinfastlongan",
+  facebook: "https://www.facebook.com/profile.php?id=61564536244947",
   youtube: "https://youtube.com/vinfastlongan",
   zalo: "https://zalo.me/0946999286",
   mapEmbed:
