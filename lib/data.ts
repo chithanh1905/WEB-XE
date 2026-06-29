@@ -1,6 +1,6 @@
 export const DEALER_INFO = {
-  name: "VinFast VFG Long An 3S",
-  shortName: "VinFast Long An",
+  name: "Showroom VinFast VFG Long An",
+  shortName: "VinFast VFG Long An",
   address: "1163 QL1A, Khu phố Nhơn Cầu, P. Khánh Hậu, Tỉnh Tây Ninh (Long An cũ)",
   phone: "0946 999 286",
   phoneLink: "tel:1900232389",

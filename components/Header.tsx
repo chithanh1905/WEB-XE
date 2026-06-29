@@ -54,15 +54,14 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 shrink-0">
-              <div
-                style={{ background: "var(--vf-blue)" }}
-                className="h-10 md:h-12 px-3 md:px-4 rounded flex items-center justify-center"
-              >
-                <span className="text-white font-black text-xl md:text-2xl tracking-tight">VinFast</span>
-              </div>
-              <div className="hidden sm:block">
-                <div className="text-sm font-bold text-gray-800 leading-tight">Long An 3S</div>
-                <div className="text-xs text-gray-500">Đại lý chính hãng</div>
+              <img
+                src="https://vinfastlongan3s.com/OTO3602500656/files/logo_vfx_long_an.webp"
+                alt="VinFast VFG Long An"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+              <div className="hidden sm:block border-l border-gray-200 pl-3">
+                <div className="text-sm font-bold text-gray-800 leading-tight">VinFast VFG</div>
+                <div className="text-xs text-gray-500">Đại lý 3S chính hãng</div>
               </div>
             </Link>
 
