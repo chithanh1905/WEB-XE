@@ -5,33 +5,36 @@ import Link from "next/link";
 const SLIDES = [
   {
     id: 1,
-    title: "VinFast VF 6",
-    subtitle: "SUV điện cỡ B – Cân bằng hoàn hảo",
-    description: "Phạm vi 399 km · Công nghệ ADAS · Màn hình 12.9\"",
+    image: "https://vinfastlongan3s.com/OTO3602500656/files/banner/702948448_122209420910550434_283.webp",
+    title: "VinFast VF 8 Thế Hệ Mới",
+    subtitle: "Giá bán chính thức từ 999 triệu đồng",
+    description: "SUV điện đẳng cấp với công nghệ tiên tiến nhất",
     cta: "Khám phá ngay",
-    ctaLink: "/xe-vinfast/vinfast-vf-6",
-    badge: "Bán chạy nhất",
+    ctaLink: "/xe-vinfast/vf8",
+    badge: "Giá mới 2026",
     bg: "linear-gradient(135deg, #003087 0%, #005BAC 50%, #0077CC 100%)",
     accent: "#FFD700",
   },
   {
     id: 2,
-    title: "VinFast VF 8",
-    subtitle: "SUV điện 7 chỗ đẳng cấp",
-    description: "Phạm vi 471 km · AWD · 402 mã lực · Autopilot",
+    image: "https://vinfastlongan3s.com/OTO3602500656/files/banner/702948448_122209420910550434_283.webp",
+    title: "Mùa Hè Rực Rỡ 2026",
+    subtitle: "VINFASCINATION – Ưu đãi đặc biệt",
+    description: "Hàng nghìn quà tặng và ưu đãi hấp dẫn dành cho khách hàng",
     cta: "Đặt lịch lái thử",
     ctaLink: "/lien-he",
-    badge: "Mới nhất 2024",
+    badge: "HOT 2026",
     bg: "linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%)",
     accent: "#E30613",
   },
   {
     id: 3,
+    image: "https://vinfastlongan3s.com/OTO3602500656/files/banner/702948448_122209420910550434_283.webp",
     title: "VinFast VF 3",
     subtitle: "Xe điện mini – Bước vào tương lai",
-    description: "Giá từ 235 triệu · Chi phí vận hành 0 đ nhiên liệu",
+    description: "Giá từ 299 triệu · Chi phí vận hành siêu tiết kiệm",
     cta: "Xem chi tiết",
-    ctaLink: "/xe-vinfast/vinfast-vf-3",
+    ctaLink: "/xe-vinfast/vf3",
     badge: "Giá tốt nhất",
     bg: "linear-gradient(135deg, #14532D 0%, #166534 50%, #15803D 100%)",
     accent: "#86EFAC",
@@ -59,14 +62,17 @@ export default function HeroSlider() {
   return (
     <section
       className="relative h-[480px] md:h-[560px] lg:h-[640px] overflow-hidden"
-      style={{ background: slide.bg, transition: "background 0.8s ease" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full border-4 border-white translate-x-32 -translate-y-32" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full border-4 border-white -translate-x-16 translate-y-16" />
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src={slide.image}
+          alt={slide.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.45)" }} />
       </div>
 
       {/* Content */}
@@ -109,20 +115,6 @@ export default function HeroSlider() {
             </Link>
           </div>
         </div>
-      </div>
-
-      {/* Car silhouette (decorative) */}
-      <div className="absolute right-0 bottom-0 opacity-20 hidden lg:block">
-        <svg width="600" height="280" viewBox="0 0 600 280" fill="white">
-          <ellipse cx="300" cy="250" rx="280" ry="20" opacity="0.3"/>
-          <path d="M80 200 Q100 120 200 100 L250 80 Q300 60 380 70 L450 80 Q520 90 540 120 L550 150 Q560 170 550 200 Z" opacity="0.5"/>
-          <rect x="120" y="165" width="60" height="40" rx="4" opacity="0.3"/>
-          <rect x="380" y="165" width="60" height="40" rx="4" opacity="0.3"/>
-          <circle cx="160" cy="210" r="30" opacity="0.4"/>
-          <circle cx="420" cy="210" r="30" opacity="0.4"/>
-          <circle cx="160" cy="210" r="18" opacity="0.6"/>
-          <circle cx="420" cy="210" r="18" opacity="0.6"/>
-        </svg>
       </div>
 
       {/* Navigation arrows */}
