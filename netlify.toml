@@ -4,11 +4,3 @@
 
 [build.environment]
   NODE_VERSION = "20"
-
-# Next.js static export: mỗi route đã có file HTML riêng trong thư mục out/
-# Không cần redirect về index.html — Netlify tự serve đúng file
-# Chỉ cần fallback cho 404 thật sự
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
