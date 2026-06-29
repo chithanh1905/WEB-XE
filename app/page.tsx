@@ -167,15 +167,23 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="section-title text-center mb-2">Showroom của chúng tôi</h2>
           <p className="text-center text-gray-500 mb-8">{DEALER_INFO.address}</p>
-          <div className="rounded-xl overflow-hidden shadow-lg h-80 bg-blue-50 flex items-center justify-center border border-blue-100">
-            <div className="text-center p-8">
-              <svg className="mx-auto mb-3" width="48" height="48" viewBox="0 0 24 24" fill="#005BAC"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              <p className="font-bold text-gray-800">{DEALER_INFO.name}</p>
-              <p className="text-sm text-gray-500 mt-1 mb-4">{DEALER_INFO.address}</p>
-              <a href={DEALER_INFO.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="btn-primary mx-auto text-sm">
-                Xem trên Google Maps
-              </a>
-            </div>
+          <div className="rounded-xl overflow-hidden shadow-lg h-80 border border-blue-100">
+            <iframe
+              src={DEALER_INFO.mapEmbed}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="VinFast Long An trên Google Maps"
+            />
+          </div>
+          <div className="mt-4 text-center">
+            <a href={DEALER_INFO.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex text-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Xem chỉ đường trên Google Maps
+            </a>
           </div>
         </div>
       </section>

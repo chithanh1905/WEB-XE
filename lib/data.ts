@@ -12,8 +12,8 @@ export const DEALER_INFO = {
   youtube: "https://youtube.com/vinfastlongan",
   zalo: "https://zalo.me/0946999286",
   mapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.123456789!2d106.123456!3d10.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA3JzI0LjQiTiAxMDbCsDA3JzI0LjQiRQ!5e0!3m2!1svi!2svn!4v1234567890",
-  googleMapsUrl: "https://maps.google.com",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.5!2d106.3693356!3d10.4894942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310ab70015d63aef%3A0x78894daa5b75fc56!2sShowroom%20VinFast%20VFG%20Long%20An!5e0!3m2!1svi!2svn!4v1751183400000",
+  googleMapsUrl: "https://www.google.com/maps/place/Showroom+VinFast+VFG+Long+An/@10.4894942,106.3693356,17z/data=!3m1!4b1!4m6!3m5!1s0x310ab70015d63aef:0x78894daa5b75fc56!8m2!3d10.4894889!4d106.3719105!16s%2Fg%2F11z218j2p1",
 };
 
 export interface Car {
