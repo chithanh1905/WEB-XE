@@ -4,7 +4,7 @@ export const DEALER_INFO = {
   address: "1163 QL1A, Khu phố Nhơn Cầu, P. Khánh Hậu, Tỉnh Tây Ninh (Long An cũ)",
   phone: "0946 999 286",
   phoneLink: "tel:1900232389",
-  email: "vinfastlongan@gmail.com",
+  email: "phamtuvinfast@gmail.com",
   hotline: "0946 999 286",
   hotlineLink: "tel:0946999286",
   workingHours: "7:30 - 18:00 (Tất cả các ngày trong tuần)",
