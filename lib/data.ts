@@ -1,0 +1,344 @@
+export const DEALER_INFO = {
+  name: "VinFast VFG Long An 3S",
+  shortName: "VinFast Long An",
+  address: "1163 QL1A, Khu phố Nhơn Cầu, P. Khánh Hậu, Tỉnh Tây Ninh (Long An cũ)",
+  phone: "0946 999 286",
+  phoneLink: "tel:1900232389",
+  email: "vinfastlongan@gmail.com",
+  hotline: "0946 999 286",
+  hotlineLink: "tel:0946999286",
+  workingHours: "7:30 - 18:00 (Tất cả các ngày trong tuần)",
+  facebook: "https://facebook.com/vinfastlongan",
+  youtube: "https://youtube.com/vinfastlongan",
+  zalo: "https://zalo.me/0946999286",
+  mapEmbed:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.123456789!2d106.123456!3d10.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA3JzI0LjQiTiAxMDbCsDA3JzI0LjQiRQ!5e0!3m2!1svi!2svn!4v1234567890",
+  googleMapsUrl: "https://maps.google.com",
+};
+
+export interface Car {
+  id: string;
+  slug: string;
+  name: string;
+  category: "suv" | "sedan" | "hatchback" | "electric" | "mpv";
+  tagline: string;
+  price: string;
+  priceFrom: number;
+  image: string;
+  images: string[];
+  colors: { name: string; hex: string; image: string }[];
+  specs: { label: string; value: string }[];
+  highlights: string[];
+  description: string;
+  isNew?: boolean;
+  isElectric?: boolean;
+  badge?: string;
+}
+
+export const CARS: Car[] = [
+  {
+    id: "vf3",
+    slug: "vf3",
+    name: "VinFast VF 3",
+    category: "hatchback",
+    tagline: "Xe điện mini – Đô thị thông minh",
+    price: "Từ 235.000.000 đ",
+    priceFrom: 235000000,
+    image: "/images/cars/vf3/main.jpg",
+    images: [
+      "/images/cars/vf3/main.jpg",
+      "/images/cars/vf3/interior.jpg",
+      "/images/cars/vf3/side.jpg",
+      "/images/cars/vf3/rear.jpg",
+    ],
+    colors: [
+      { name: "Trắng Ngọc Trai", hex: "#F5F5F0", image: "/images/cars/vf3/color-white.jpg" },
+      { name: "Xanh Đại Dương", hex: "#1B4F8C", image: "/images/cars/vf3/color-blue.jpg" },
+      { name: "Đỏ Ruby", hex: "#C0392B", image: "/images/cars/vf3/color-red.jpg" },
+    ],
+    specs: [
+      { label: "Loại xe", value: "Xe điện" },
+      { label: "Phạm vi", value: "Lên đến 210 km" },
+      { label: "Công suất", value: "42 mã lực" },
+      { label: "Tăng tốc 0-100", value: "< 12 giây" },
+      { label: "Tốc độ tối đa", value: "110 km/h" },
+      { label: "Số chỗ ngồi", value: "4 chỗ" },
+      { label: "Pin", value: "19.6 kWh" },
+      { label: "Sạc nhanh", value: "Hỗ trợ DC 30kW" },
+    ],
+    highlights: ["Xe điện mini thân thiện môi trường", "Chi phí vận hành siêu tiết kiệm", "Dễ đỗ xe trong đô thị", "Kết nối thông minh"],
+    description: "VinFast VF 3 – chiếc xe điện mini với thiết kế trẻ trung, năng động. Lý tưởng cho việc di chuyển trong đô thị, tiết kiệm chi phí và bảo vệ môi trường.",
+    isElectric: true,
+    badge: "Mới",
+    isNew: true,
+  },
+  {
+    id: "vf5",
+    slug: "vf5",
+    name: "VinFast VF 5",
+    category: "suv",
+    tagline: "SUV điện đô thị – Phong cách hiện đại",
+    price: "Từ 458.000.000 đ",
+    priceFrom: 458000000,
+    image: "/images/cars/vf5/main.jpg",
+    images: [
+      "/images/cars/vf5/main.jpg",
+      "/images/cars/vf5/interior.jpg",
+      "/images/cars/vf5/side.jpg",
+      "/images/cars/vf5/rear.jpg",
+    ],
+    colors: [
+      { name: "Trắng Tinh Khôi", hex: "#FFFFFF", image: "/images/cars/vf5/color-white.jpg" },
+      { name: "Xám Bạc", hex: "#8E9EAB", image: "/images/cars/vf5/color-silver.jpg" },
+      { name: "Đen Huyền", hex: "#1A1A1A", image: "/images/cars/vf5/color-black.jpg" },
+    ],
+    specs: [
+      { label: "Loại xe", value: "SUV điện" },
+      { label: "Phạm vi", value: "Lên đến 326 km" },
+      { label: "Công suất", value: "134 mã lực" },
+      { label: "Tăng tốc 0-100", value: "< 11 giây" },
+      { label: "Tốc độ tối đa", value: "130 km/h" },
+      { label: "Số chỗ ngồi", value: "5 chỗ" },
+      { label: "Pin", value: "37.23 kWh" },
+      { label: "Sạc nhanh", value: "Hỗ trợ DC 50kW" },
+    ],
+    highlights: ["Công nghệ lái hỗ trợ thông minh", "Nội thất sang trọng tiện nghi", "Pin dung lượng lớn", "Kết nối 4G & WiFi"],
+    description: "VinFast VF 5 – SUV điện cỡ nhỏ với thiết kế hiện đại, nội thất thông minh. Phù hợp cho gia đình trẻ năng động tại đô thị.",
+    isElectric: true,
+  },
+  {
+    id: "vf6",
+    slug: "vf6",
+    name: "VinFast VF 6",
+    category: "suv",
+    tagline: "SUV điện B – Cân bằng hoàn hảo",
+    price: "Từ 675.000.000 đ",
+    priceFrom: 675000000,
+    image: "/images/cars/vf6/main.jpg",
+    images: ["/images/cars/vf6/main.jpg", "/images/cars/vf6/interior.jpg", "/images/cars/vf6/side.jpg"],
+    colors: [
+      { name: "Trắng Ngọc", hex: "#F0F0EC", image: "/images/cars/vf6/color-white.jpg" },
+      { name: "Xanh Sapphire", hex: "#1A3A6B", image: "/images/cars/vf6/color-blue.jpg" },
+      { name: "Xám Titan", hex: "#6B7280", image: "/images/cars/vf6/color-gray.jpg" },
+      { name: "Đen Jet", hex: "#111111", image: "/images/cars/vf6/color-black.jpg" },
+    ],
+    specs: [
+      { label: "Loại xe", value: "SUV điện" },
+      { label: "Phạm vi", value: "Lên đến 399 km" },
+      { label: "Công suất", value: "201 mã lực" },
+      { label: "Tăng tốc 0-100", value: "< 8.5 giây" },
+      { label: "Tốc độ tối đa", value: "170 km/h" },
+      { label: "Số chỗ ngồi", value: "5 chỗ" },
+      { label: "Pin", value: "59.6 kWh" },
+      { label: "Sạc nhanh", value: "Hỗ trợ DC 70kW" },
+    ],
+    highlights: ["Phạm vi hành trình ấn tượng", "Hệ thống ADAS tiên tiến", "Màn hình trung tâm 12.9 inch", "Ghế sưởi & làm mát"],
+    description: "VinFast VF 6 – SUV điện cỡ B với thiết kế tinh tế, công nghệ hàng đầu. Lựa chọn lý tưởng cho gia đình hiện đại.",
+    isElectric: true,
+    badge: "Bán chạy",
+  },
+  {
+    id: "vf7",
+    slug: "vf7",
+    name: "VinFast VF 7",
+    category: "suv",
+    tagline: "SUV điện C – Đẳng cấp thể thao",
+    price: "Từ 850.000.000 đ",
+    priceFrom: 850000000,
+    image: "/images/cars/vf7/main.jpg",
+    images: ["/images/cars/vf7/main.jpg", "/images/cars/vf7/interior.jpg", "/images/cars/vf7/side.jpg"],
+    colors: [
+      { name: "Xanh Neptune", hex: "#0B3D6B", image: "/images/cars/vf7/color-blue.jpg" },
+      { name: "Trắng Arctic", hex: "#F8F8F5", image: "/images/cars/vf7/color-white.jpg" },
+      { name: "Đỏ Passion", hex: "#B91C1C", image: "/images/cars/vf7/color-red.jpg" },
+    ],
+    specs: [
+      { label: "Loại xe", value: "SUV điện" },
+      { label: "Phạm vi", value: "Lên đến 431 km" },
+      { label: "Công suất", value: "349 mã lực (2WD) / 402 mã lực (AWD)" },
+      { label: "Tăng tốc 0-100", value: "< 5.9 giây (AWD)" },
+      { label: "Tốc độ tối đa", value: "200 km/h" },
+      { label: "Số chỗ ngồi", value: "5 chỗ" },
+      { label: "Pin", value: "75.3 kWh" },
+      { label: "Sạc nhanh", value: "Hỗ trợ DC 150kW" },
+    ],
+    highlights: ["Dẫn động 4 bánh AWD tùy chọn", "Tăng tốc 0-100 dưới 6 giây", "Màn hình kép 15.6 inch", "Hệ thống âm thanh cao cấp"],
+    description: "VinFast VF 7 – SUV điện cỡ C thể thao với hiệu suất vượt trội. Sự kết hợp hoàn hảo giữa phong cách và công nghệ.",
+    isElectric: true,
+  },
+  {
+    id: "vf8",
+    slug: "vf8",
+    name: "VinFast VF 8",
+    category: "suv",
+    tagline: "SUV điện D – Sang trọng đỉnh cao",
+    price: "Từ 1.190.000.000 đ",
+    priceFrom: 1190000000,
+    image: "/images/cars/vf8/main.jpg",
+    images: ["/images/cars/vf8/main.jpg", "/images/cars/vf8/interior.jpg", "/images/cars/vf8/side.jpg"],
+    colors: [
+      { name: "Xanh Midnight", hex: "#0A2744", image: "/images/cars/vf8/color-blue.jpg" },
+      { name: "Trắng Crystal", hex: "#FAFAF8", image: "/images/cars/vf8/color-white.jpg" },
+      { name: "Xám Graphite", hex: "#4B5563", image: "/images/cars/vf8/color-gray.jpg" },
+    ],
+    specs: [
+      { label: "Loại xe", value: "SUV điện" },
+      { label: "Phạm vi", value: "Lên đến 471 km" },
+      { label: "Công suất", value: "402 mã lực" },
+      { label: "Tăng tốc 0-100", value: "< 5.5 giây" },
+      { label: "Tốc độ tối đa", value: "200 km/h" },
+      { label: "Số chỗ ngồi", value: "7 chỗ" },
+      { label: "Pin", value: "87.7 kWh" },
+      { label: "Sạc nhanh", value: "Hỗ trợ DC 150kW" },
+    ],
+    highlights: ["7 chỗ ngồi rộng rãi", "AWD chuẩn mực", "Autopilot thế hệ mới", "Nội thất da cao cấp Nappa"],
+    description: "VinFast VF 8 – SUV điện đầu bảng với không gian 7 chỗ và trang bị đẳng cấp hàng đầu phân khúc.",
+    isElectric: true,
+    badge: "Hot",
+  },
+  {
+    id: "vf9",
+    slug: "vf9",
+    name: "VinFast VF 9",
+    category: "suv",
+    tagline: "SUV điện E – Hành trình không giới hạn",
+    price: "Từ 1.550.000.000 đ",
+    priceFrom: 1550000000,
+    image: "/images/cars/vf9/main.jpg",
+    images: ["/images/cars/vf9/main.jpg", "/images/cars/vf9/interior.jpg", "/images/cars/vf9/side.jpg"],
+    colors: [
+      { name: "Trắng Phantom", hex: "#F9F9F7", image: "/images/cars/vf9/color-white.jpg" },
+      { name: "Đen Carbon", hex: "#0D0D0D", image: "/images/cars/vf9/color-black.jpg" },
+      { name: "Xanh Royal", hex: "#1E3A5F", image: "/images/cars/vf9/color-blue.jpg" },
+    ],
+    specs: [
+      { label: "Loại xe", value: "SUV điện cỡ lớn" },
+      { label: "Phạm vi", value: "Lên đến 568 km" },
+      { label: "Công suất", value: "402 mã lực" },
+      { label: "Tăng tốc 0-100", value: "< 6.5 giây" },
+      { label: "Tốc độ tối đa", value: "200 km/h" },
+      { label: "Số chỗ ngồi", value: "6/7 chỗ" },
+      { label: "Pin", value: "123 kWh" },
+      { label: "Sạc nhanh", value: "Hỗ trợ DC 150kW" },
+    ],
+    highlights: ["Pin khổng lồ 123 kWh", "Phạm vi 568 km mỗi lần sạc", "6/7 chỗ ngồi hạng thương gia", "Hệ thống giải trí sau xe"],
+    description: "VinFast VF 9 – SUV điện flagship cỡ lớn với pin khổng lồ, phạm vi hành trình vượt trội và không gian sang trọng bậc nhất.",
+    isElectric: true,
+  },
+];
+
+export interface News {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  date: string;
+  category: "khuyen-mai" | "tin-tuc" | "su-kien";
+  categoryLabel: string;
+}
+
+export const NEWS: News[] = [
+  {
+    id: "1",
+    slug: "khuyen-mai-thang-7-2024",
+    title: "Khuyến mãi tháng 7: Ưu đãi lên đến 50 triệu đồng khi mua VinFast VF 6",
+    excerpt: "Trong tháng 7/2024, VinFast Long An triển khai chương trình ưu đãi đặc biệt với mức giảm giá lên đến 50 triệu đồng cho dòng VF 6.",
+    content: "",
+    image: "/images/news/khuyen-mai-t7.jpg",
+    date: "2024-07-01",
+    category: "khuyen-mai",
+    categoryLabel: "Khuyến mãi",
+  },
+  {
+    id: "2",
+    slug: "vinfast-vf3-ra-mat",
+    title: "VinFast VF 3 chính thức ra mắt tại thị trường Việt Nam",
+    excerpt: "VinFast VF 3 – xe điện mini giá rẻ nhất của VinFast đã chính thức có mặt tại đại lý Long An với giá từ 235 triệu đồng.",
+    content: "",
+    image: "/images/news/vf3-ra-mat.jpg",
+    date: "2024-06-20",
+    category: "tin-tuc",
+    categoryLabel: "Tin tức",
+  },
+  {
+    id: "3",
+    slug: "lai-thu-cuoi-tuan",
+    title: "Sự kiện lái thử xe điện VinFast cuối tuần tại Long An",
+    excerpt: "Đến trải nghiệm xe điện VinFast hoàn toàn miễn phí tại showroom Long An. Nhận ngay quà tặng hấp dẫn khi tham gia sự kiện.",
+    content: "",
+    image: "/images/news/lai-thu.jpg",
+    date: "2024-06-15",
+    category: "su-kien",
+    categoryLabel: "Sự kiện",
+  },
+  {
+    id: "4",
+    slug: "chinh-sach-bao-hanh-pin",
+    title: "Chính sách bảo hành pin xe điện VinFast – Yên tâm tuyệt đối",
+    excerpt: "VinFast cam kết bảo hành pin xe điện lên đến 10 năm hoặc 200,000 km, đảm bảo an tâm tuyệt đối cho khách hàng.",
+    content: "",
+    image: "/images/news/bao-hanh.jpg",
+    date: "2024-06-10",
+    category: "tin-tuc",
+    categoryLabel: "Tin tức",
+  },
+  {
+    id: "5",
+    slug: "ho-tro-vay-0-lai-suat",
+    title: "Hỗ trợ vay mua xe với lãi suất 0% trong 12 tháng đầu",
+    excerpt: "Chương trình hỗ trợ tài chính đặc biệt: vay mua xe VinFast với lãi suất 0% trong 12 tháng đầu, thủ tục đơn giản, phê duyệt nhanh.",
+    content: "",
+    image: "/images/news/vay-xe.jpg",
+    date: "2024-06-05",
+    category: "khuyen-mai",
+    categoryLabel: "Khuyến mãi",
+  },
+  {
+    id: "6",
+    slug: "vinfast-longan-khai-truong",
+    title: "VinFast Long An khai trương cơ sở vật chất mới hiện đại",
+    excerpt: "Đại lý VinFast Long An chính thức khai trương showroom mới với diện tích 2000m², trang thiết bị hiện đại, phục vụ khách hàng tốt hơn.",
+    content: "",
+    image: "/images/news/khai-truong.jpg",
+    date: "2024-05-28",
+    category: "su-kien",
+    categoryLabel: "Sự kiện",
+  },
+];
+
+export const PROMOTIONS = [
+  {
+    id: "1",
+    title: "Ưu đãi lên đến 50 triệu",
+    description: "Áp dụng cho VF 6, VF 7, VF 8 trong tháng 7/2024",
+    badge: "HOT",
+    color: "#E30613",
+    icon: "gift",
+  },
+  {
+    id: "2",
+    title: "Lãi suất 0% 12 tháng",
+    description: "Hỗ trợ vay mua xe với lãi suất 0% trong năm đầu tiên",
+    badge: "NEW",
+    color: "#005BAC",
+    icon: "percent",
+  },
+  {
+    id: "3",
+    title: "Miễn phí bảo dưỡng 3 năm",
+    description: "Gói bảo dưỡng định kỳ miễn phí trong 3 năm đầu",
+    badge: "",
+    color: "#16A34A",
+    icon: "shield",
+  },
+  {
+    id: "4",
+    title: "Tặng thẻ sạc 5 triệu",
+    description: "Tặng kèm thẻ sạc VinFast trị giá 5 triệu đồng",
+    badge: "",
+    color: "#9333EA",
+    icon: "zap",
+  },
+];

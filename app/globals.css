@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+  --vf-blue: #005BAC;
+  --vf-blue-dark: #003087;
+  --vf-blue-light: #0077CC;
+  --vf-red: #E30613;
+  --vf-white: #FFFFFF;
+  --vf-gray: #F5F5F5;
+  --vf-dark: #1A1A2E;
+  --vf-text: #1F2937;
+  --vf-text-muted: #6B7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', 'Segoe UI', system-ui, sans-serif;
+  color: var(--vf-text);
+  background: var(--vf-white);
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--vf-blue); border-radius: 3px; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-fade-up { animation: fadeInUp 0.6s ease-out forwards; }
+
+.car-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.car-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 91, 172, 0.15);
+}
+
+.btn-primary {
+  background: var(--vf-blue);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-primary:hover { background: var(--vf-blue-dark); transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--vf-blue);
+  border: 2px solid var(--vf-blue);
+  padding: 10px 26px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-outline:hover { background: var(--vf-blue); color: white; }
+
+.btn-red {
+  background: var(--vf-red);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-red:hover { background: #C0392B; transform: translateY(-1px); }
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--vf-dark);
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--vf-blue);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #D1D5DB;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  outline: none;
+  background: white;
+  font-family: inherit;
+}
+.form-input:focus { border-color: var(--vf-blue); box-shadow: 0 0 0 3px rgba(0, 91, 172, 0.1); }
+
+.badge-new { background: #E30613; color: white; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+.badge-hot { background: #F97316; color: white; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+.badge-sale { background: #16A34A; color: white; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+
+.badge-electric {
+  background: linear-gradient(135deg, #005BAC, #0077CC);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gallery-thumb {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  border: 2px solid transparent;
+}
+.gallery-thumb:hover, .gallery-thumb.active { opacity: 1; border-color: var(--vf-blue); }
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 50;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  background: var(--vf-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+}
+.back-to-top:hover { background: var(--vf-blue-dark); transform: translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
