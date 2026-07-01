@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import CarCard from "@/components/CarCard";
 import { CARS } from "@/lib/data";
@@ -10,6 +10,14 @@ const TABS = [
 ];
 
 export default function XeVinFastPage() {
+  return (
+    <Suspense fallback={null}>
+      <XeVinFastContent />
+    </Suspense>
+  );
+}
+
+function XeVinFastContent() {
   const searchParams = useSearchParams();
   const groupParam = searchParams.get("group");
 
