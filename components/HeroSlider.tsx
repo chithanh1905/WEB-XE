@@ -22,19 +22,15 @@ export default function HeroSlider() {
 
   return (
     <section
-      className="relative h-[320px] sm:h-[420px] md:h-[520px] lg:h-[620px] overflow-hidden"
-      style={{ background: "#0a1628" }}
+      className="relative w-full overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Banner — object-contain, nền tối lấp khoảng trống */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <img
-          src={slide.image}
-          alt="Banner VinFast Long An"
-          className="w-full h-full object-contain"
-        />
-      </div>
+      <img
+        src={slide.image}
+        alt="Banner VinFast Long An"
+        className="w-full h-auto block"
+      />
 
       {SLIDES.length > 1 && (
         <>
