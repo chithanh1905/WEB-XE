@@ -86,8 +86,10 @@ export default function DangKyLaiThuClient() {
                 type="tel"
                 placeholder="ĐIỆN THOẠI (*)"
                 required
+                inputMode="numeric"
+                pattern="[0-9]{10,11}"
                 value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                onChange={(e) => setForm({ ...form, phone: e.target.value.replace(/\D/g, "") })}
                 className={INPUT}
               />
               <input

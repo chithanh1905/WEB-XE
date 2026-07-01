@@ -82,9 +82,11 @@ export default function PricePopup() {
                 type="tel"
                 placeholder="ĐIỆN THOẠI (*)"
                 required
+                inputMode="numeric"
+                pattern="[0-9]{10,11}"
                 value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-500 uppercase placeholder:normal-case"
+                onChange={(e) => setForm({ ...form, phone: e.target.value.replace(/\D/g, "") })}
+                className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-500 placeholder:normal-case"
               />
               <input
                 type="text"
