@@ -19,7 +19,8 @@ export default function CarCard({ car }: CarCardProps) {
 
   return (
     <div className="car-card flex flex-col h-full">
-      {/* Ảnh + watermark */}
+      {/* Ảnh + watermark — click vào ảnh hoặc tên đều vào trang chi tiết */}
+      <Link href={`/xe-vinfast/${car.slug}`} className="block">
       <div className="relative bg-white w-full overflow-hidden" style={{ paddingTop: "70%" }}>
         {/* Watermark tên xe mờ phía sau */}
         <span
@@ -42,11 +43,14 @@ export default function CarCard({ car }: CarCardProps) {
           onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
         />
       </div>
+      </Link>
 
       {/* Nội dung */}
       <div className="flex flex-col flex-1 pt-2 pb-3 px-1">
-        {/* Tên xe */}
-        <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-0.5 leading-tight">{car.name}</h3>
+        {/* Tên xe — click vào tên cũng vào trang chi tiết */}
+        <Link href={`/xe-vinfast/${car.slug}`}>
+          <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-0.5 leading-tight hover:underline cursor-pointer">{car.name}</h3>
+        </Link>
 
         {/* Thông số km/lần sạc */}
         {rangeSpec && (
