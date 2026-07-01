@@ -8,14 +8,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div style={{ background: "var(--vf-blue)" }} className="h-12 px-4 rounded flex items-center justify-center">
-                <span className="text-white font-black text-2xl">VinFast</span>
-              </div>
-              <div>
-                <div className="font-bold text-lg">{DEALER_INFO.shortName}</div>
-                <div className="text-gray-400 text-sm">Đại lý 3S chính hãng</div>
-              </div>
+            <div className="mb-4">
+              <img src="/logo-vinfast-vfg.png" alt="VinFast VFG Long An" className="h-14 w-auto object-contain mb-3" />
+              <div className="font-black text-xl text-white">{DEALER_INFO.shortName}</div>
+              <div className="text-gray-400 text-sm mt-0.5">Đại lý 3S chính hãng</div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4 max-w-sm">
               Đại lý xe điện VinFast chính hãng tại Long An. Cam kết mang đến dịch vụ bán hàng và hậu mãi tốt nhất cho khách hàng.
