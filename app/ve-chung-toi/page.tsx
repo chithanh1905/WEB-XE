@@ -4,172 +4,206 @@ import { DEALER_INFO } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Giới thiệu – VinFast VFG Long An",
-  description: "VFG Long An là thành viên của Tập đoàn Tương Lai Việt (VFG), một trong những nhà phân phối VinFast lớn nhất tại Việt Nam.",
+  description: "VFG Long An là đại lý chính thức VinFast thuộc Tập đoàn Tương Lai Việt. Showroom 3.600m² tại Long An.",
 };
+
+const GALLERY = [
+  {
+    src: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/06/ChatGPT-Image-13_31_18-11-thg-6-2026-1-480x360.png",
+    alt: "Showroom VinFast VFG Long An",
+  },
+  {
+    src: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/06/DJI_0201-1-scaled-480x360.jpg",
+    alt: "Toàn cảnh showroom VFG Long An",
+  },
+  {
+    src: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/06/DJI_0217-1-scaled-480x360.jpg",
+    alt: "Cơ sở VFG Long An nhìn từ trên cao",
+  },
+  {
+    src: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/06/DSCF4134-1-scaled-480x360.jpg",
+    alt: "Nội thất showroom VFG Long An",
+  },
+  {
+    src: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/06/DSCF4132-1-scaled-480x360.jpg",
+    alt: "Khu vực trưng bày xe VinFast",
+  },
+  {
+    src: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/04/gioi-thieu-vfg-long-an-6-480x360.jpg",
+    alt: "VFG Long An – Đại lý chính hãng VinFast",
+  },
+];
 
 export default function VeChungToiPage() {
   return (
     <>
-      {/* Breadcrumb + tiêu đề */}
-      <div className="py-8">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-sm text-gray-400 mb-2">Trang chủ / Giới thiệu</div>
-          <h1 className="text-3xl md:text-4xl font-black mb-1 text-gray-900">VinFast VFG Long An</h1>
-          <p className="text-gray-500">Thành viên của Tập đoàn Tương Lai Việt (VFG) – Nhà phân phối VinFast chính hãng</p>
+      {/* Breadcrumb */}
+      <div className="bg-gray-50 py-3 border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 text-sm text-gray-400">
+          Trang chủ / <span className="text-gray-600">Giới thiệu</span>
         </div>
       </div>
 
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-5xl mx-auto px-4 py-10 space-y-12">
 
-          {/* Giới thiệu + số liệu */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="section-title mb-4">Câu chuyện của chúng tôi</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                <strong>VFG Long An</strong> là thành viên của Tập đoàn Tương Lai Việt (VFG), một trong những nhà phân phối VinFast lớn nhất tại Việt Nam. Showroom tọa lạc tại 1163 QL1A, Khu phố Nhơn Cầu, Phường Khánh Hậu, Tỉnh Long An — vị trí thuận tiện kết nối toàn vùng Đồng bằng sông Cửu Long.
+        {/* Section 1: Giới thiệu */}
+        <section>
+          <h1 className="text-2xl md:text-3xl font-black mb-5 pb-3 border-b-2" style={{ borderColor: "var(--vf-blue)", color: "var(--vf-blue)" }}>
+            Giới thiệu
+          </h1>
+
+          {/* Ảnh chính + text */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-6">
+            <img
+              src="https://vinfastvfglongan.com.vn/wp-content/uploads/2026/06/1111.png"
+              alt="VFG Long An"
+              className="w-full rounded-lg object-cover"
+            />
+            <div className="space-y-3 text-gray-700 text-sm leading-relaxed">
+              <p>
+                <strong>VFG Long An</strong> là đại lý chính thức của VinFast thuộc <strong>Tập đoàn Tương Lai Việt (VFG)</strong> — một trong những nhà phân phối VinFast lớn nhất tại Việt Nam.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Với diện tích <strong>3.600 m²</strong> và vốn đầu tư <strong>22,3 tỷ đồng</strong>, đơn vị do ông <strong>Đặng Thế Kiệt</strong> quản lý — người có hơn <strong>14 năm kinh nghiệm</strong> trong lĩnh vực phân phối ô tô. Chúng tôi cam kết cung cấp sản phẩm và dịch vụ xe điện VinFast chính hãng với trải nghiệm chuyên nghiệp, tận tâm nhất.
+              <p>
+                Showroom tọa lạc tại <strong>1163 QL1A, Khu phố Nhơn Cầu, Phường Khánh Hậu, Tỉnh Long An</strong> với diện tích <strong>3.600 m²</strong> và vốn đầu tư <strong>22,3 tỷ đồng</strong>.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Hướng đến trở thành cơ sở <em>"VinFast uy tín hàng đầu khu vực vùng Đồng bằng sông Cửu Long"</em>, chúng tôi không ngừng nâng cao chất lượng dịch vụ và mở rộng trải nghiệm cho khách hàng.
+              <p>
+                Đơn vị do ông <strong>Đặng Thế Kiệt</strong> — Giám đốc với hơn <strong>14 năm kinh nghiệm</strong> trong lĩnh vực phân phối ô tô — quản lý theo triết lý <em>"Đặt khách hàng làm trọng tâm"</em>.
               </p>
-              <div className="flex gap-4 flex-wrap">
-                <Link href="/dang-ky-lai-thu" className="btn-primary">Đăng ký lái thử</Link>
-                <Link href="/xe-vinfast" className="btn-outline">Xem xe</Link>
+              <p>
+                VFG Long An hướng đến trở thành cơ sở <strong>"VinFast uy tín hàng đầu khu vực vùng Đồng bằng sông Cửu Long"</strong>, cam kết cung cấp sản phẩm và dịch vụ xe điện VinFast chính hãng với trải nghiệm chuyên nghiệp, minh bạch và tận tâm nhất.
+              </p>
+            </div>
+          </div>
+
+          {/* Ảnh drone toàn cảnh */}
+          <img
+            src="https://vinfastvfglongan.com.vn/wp-content/uploads/2026/06/DJI_0175-scaled.jpg"
+            alt="Toàn cảnh VFG Long An nhìn từ trên cao"
+            className="w-full rounded-lg object-cover max-h-96"
+          />
+        </section>
+
+        {/* Section 2: Đội ngũ nhân sự */}
+        <section>
+          <h2 className="text-xl md:text-2xl font-black mb-5 pb-3 border-b-2" style={{ borderColor: "var(--vf-blue)", color: "var(--vf-blue)" }}>
+            Đội ngũ nhân sự
+          </h2>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Đội ngũ nhân sự của VFG Long An được đào tạo theo tiêu chuẩn VinFast, am hiểu sâu về công nghệ xe điện và chính sách hậu mãi. Được xây dựng với tinh thần <strong>tiên phong, chuyên nghiệp và nhất quán</strong> trong định hướng lấy khách hàng làm trọng tâm — mỗi nhân viên đều cam kết đồng hành cùng khách hàng trong toàn bộ hành trình từ tư vấn, mua xe đến chăm sóc hậu mãi.
+          </p>
+        </section>
+
+        {/* Section 3: Gallery ảnh 3 cột */}
+        <section>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {GALLERY.map((img) => (
+              <div key={img.src} className="overflow-hidden rounded-lg aspect-[4/3]">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Section 4: Tầm nhìn & Sứ mệnh */}
+        <section>
+          <h2 className="text-xl md:text-2xl font-black mb-6 pb-3 border-b-2" style={{ borderColor: "var(--vf-blue)", color: "var(--vf-blue)" }}>
+            Tầm nhìn & Sứ mệnh
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex gap-4 items-start bg-blue-50 rounded-xl p-5">
+              <img
+                src="https://vinfastvfglongan.com.vn/wp-content/uploads/2026/03/tam-nhin.png"
+                alt="Tầm nhìn"
+                className="w-14 h-14 object-contain shrink-0"
+              />
+              <div>
+                <h3 className="font-black text-base mb-2" style={{ color: "var(--vf-blue)" }}>Tầm nhìn</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Trở thành showroom VinFast hàng đầu khu vực, tiên phong lan tỏa giao thông xanh tại vùng Đồng bằng sông Cửu Long.
+                </p>
               </div>
             </div>
-
-            {/* Số liệu thực tế */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-              <div className="grid grid-cols-2 gap-5">
-                {[
-                  { num: "3.600 m²", label: "Diện tích showroom" },
-                  { num: "22,3 tỷ", label: "Vốn đầu tư" },
-                  { num: "14+ năm", label: "Kinh nghiệm quản lý" },
-                  { num: "7/7", label: "Ngày phục vụ trong tuần" },
-                ].map((stat) => (
-                  <div key={stat.label} className="bg-white rounded-xl p-5 shadow-sm text-center">
-                    <div className="text-xl font-black" style={{ color: "var(--vf-blue)" }}>{stat.num}</div>
-                    <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
-                  </div>
-                ))}
+            <div className="flex gap-4 items-start bg-red-50 rounded-xl p-5">
+              <img
+                src="https://vinfastvfglongan.com.vn/wp-content/uploads/2026/03/su-menh.png"
+                alt="Sứ mệnh"
+                className="w-14 h-14 object-contain shrink-0"
+              />
+              <div>
+                <h3 className="font-black text-base mb-2" style={{ color: "#E30613" }}>Sứ mệnh</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Cung cấp sản phẩm và dịch vụ xe điện VinFast chính hãng, đồng hành cùng khách hàng trong toàn bộ hành trình mua xe và hậu mãi.
+                </p>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* Tầm nhìn & Sứ mệnh */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-              <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#005BAC"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        {/* Section 5: Giá trị cốt lõi */}
+        <section>
+          <h2 className="text-xl md:text-2xl font-black mb-6 pb-3 border-b-2" style={{ borderColor: "var(--vf-blue)", color: "var(--vf-blue)" }}>
+            Giá trị cốt lõi
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/03/gia-tri-cot-loi-1.png",
+                title: "Khách hàng là trung tâm",
+                desc: "Mọi quyết định và hành động đều hướng đến sự hài lòng tối đa của khách hàng. Lắng nghe, thấu hiểu và phục vụ tận tâm.",
+              },
+              {
+                icon: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/03/gia-tri-cot-loi-2.png",
+                title: "Chính trực & Minh bạch",
+                desc: "Cam kết trung thực trong từng giao dịch. Giá cả công khai, thông tin rõ ràng, không phát sinh chi phí ẩn.",
+              },
+              {
+                icon: "https://vinfastvfglongan.com.vn/wp-content/uploads/2026/03/gia-tri-cot-loi-3.png",
+                title: "Chuyên nghiệp & Tận tâm",
+                desc: "Đội ngũ được đào tạo bài bản bởi VinFast. Phục vụ nhiệt tình, chu đáo từ tư vấn đến sau khi bàn giao xe.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white border border-gray-100 rounded-xl shadow-sm p-5 text-center hover:shadow-md transition-shadow">
+                <img src={item.icon} alt={item.title} className="w-16 h-16 object-contain mx-auto mb-3" />
+                <h3 className="font-black text-sm mb-2" style={{ color: "var(--vf-blue)" }}>{item.title}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="text-lg font-black mb-2" style={{ color: "var(--vf-blue)" }}>Tầm nhìn</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Trở thành cơ sở VinFast uy tín hàng đầu khu vực vùng Đồng bằng sông Cửu Long, mang đến trải nghiệm xe điện đẳng cấp cho mọi khách hàng.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-              <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center mb-4">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#E30613"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <h3 className="text-lg font-black mb-2" style={{ color: "#E30613" }}>Sứ mệnh</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Cung cấp sản phẩm và dịch vụ xe điện VinFast chính hãng với chất lượng cao nhất, góp phần thúc đẩy xu hướng giao thông xanh tại Việt Nam.
-              </p>
-            </div>
+            ))}
           </div>
+        </section>
 
-          {/* Giá trị cốt lõi */}
-          <div className="mb-16">
-            <h2 className="section-title text-center mb-2">Giá trị cốt lõi</h2>
-            <p className="text-gray-500 text-center mb-10">Những nguyên tắc định hướng mọi hoạt động của chúng tôi</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="#005BAC"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,
-                  title: "Khách hàng là trung tâm",
-                  desc: "Mọi quyết định và hành động đều hướng đến sự hài lòng tối đa của khách hàng. Lắng nghe, thấu hiểu và phục vụ tận tâm.",
-                },
-                {
-                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="#005BAC"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>,
-                  title: "Chính trực & Minh bạch",
-                  desc: "Cam kết trung thực trong từng giao dịch. Giá cả công khai, thông tin rõ ràng, không phát sinh chi phí ẩn.",
-                },
-                {
-                  icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="#005BAC"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>,
-                  title: "Chuyên nghiệp & Tận tâm",
-                  desc: "Đội ngũ được đào tạo bài bản bởi VinFast. Phục vụ nhiệt tình, chu đáo từ lúc tư vấn đến sau khi bàn giao xe.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">{item.icon}</div>
-                  <h3 className="text-base font-black mb-2 text-gray-900">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+        {/* Section 6: Cam kết dịch vụ */}
+        <section className="bg-blue-50 rounded-xl p-6 md:p-8">
+          <h2 className="text-xl md:text-2xl font-black mb-4 pb-3 border-b-2" style={{ borderColor: "var(--vf-blue)", color: "var(--vf-blue)" }}>
+            Cam kết dịch vụ
+          </h2>
+          <p className="text-gray-700 text-sm leading-relaxed mb-6">
+            VFG Long An cam kết mang đến <strong>dịch vụ xe điện VinFast chính hãng, minh bạch, chuyên nghiệp</strong> — với trải nghiệm an tâm và bền vững. Chúng tôi không chỉ bán xe mà còn đồng hành cùng khách hàng trong suốt quá trình sử dụng và hậu mãi.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 text-sm text-gray-700">
+            <div className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#005BAC"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              <span>{DEALER_INFO.address}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#005BAC"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <a href={DEALER_INFO.hotlineLink} className="font-bold text-blue-700 hover:underline">{DEALER_INFO.hotline}</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#005BAC"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <a href="mailto:info.la@fvag.com.vn" className="text-blue-700 hover:underline">info.la@fvag.com.vn</a>
             </div>
           </div>
-
-          {/* Dịch vụ 3S */}
-          <div className="mb-16">
-            <h2 className="section-title text-center mb-2">Dịch vụ 3S</h2>
-            <p className="text-gray-500 text-center mb-10">Showroom – Sales – Service</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: "🏪",
-                  title: "Showroom",
-                  desc: "Không gian trưng bày 3.600m² hiện đại với đầy đủ các dòng xe VinFast. Khách hàng thoải mái trải nghiệm và tìm hiểu từng mẫu xe.",
-                  features: ["Diện tích 3.600 m²", "Đầy đủ dòng xe điện VinFast", "Không gian hiện đại", "Trạm sạc điện tại chỗ"],
-                },
-                {
-                  icon: "💼",
-                  title: "Sales",
-                  desc: "Đội ngũ tư vấn chuyên nghiệp, am hiểu sản phẩm. Hỗ trợ đầy đủ từ lựa chọn xe đến hoàn thiện thủ tục mua xe.",
-                  features: ["Tư vấn 1-1 chuyên sâu", "Hỗ trợ vay vốn ngân hàng", "Giao xe tận nơi", "Đổi xe cũ lấy xe mới"],
-                },
-                {
-                  icon: "🔧",
-                  title: "Service",
-                  desc: "Xưởng dịch vụ trang bị máy móc hiện đại, kỹ thuật viên được VinFast đào tạo và chứng nhận chính hãng.",
-                  features: ["Bảo dưỡng định kỳ", "Sửa chữa chính hãng", "Phụ tùng nguyên bản VinFast", "Bảo hành pin 10 năm"],
-                },
-              ].map((service) => (
-                <div key={service.title} className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 hover:shadow-md transition-shadow">
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-black mb-2" style={{ color: "var(--vf-blue)" }}>{service.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{service.desc}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#005BAC"/><path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+          <div className="mt-6 flex gap-3 flex-wrap">
+            <Link href="/dang-ky-lai-thu" className="btn-primary">Đăng ký lái thử miễn phí</Link>
+            <Link href="/xe-vinfast" className="btn-outline">Xem tất cả xe VinFast</Link>
           </div>
+        </section>
 
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-12" style={{ background: "var(--vf-blue)" }}>
-        <div className="max-w-2xl mx-auto px-4 text-center text-white">
-          <h2 className="text-2xl font-black mb-3">Sẵn sàng trải nghiệm xe điện?</h2>
-          <p className="text-white/80 mb-6">Đặt lịch lái thử miễn phí ngay hôm nay. Đội ngũ chúng tôi luôn sẵn sàng phục vụ bạn 7 ngày trong tuần.</p>
-          <div className="flex gap-3 justify-center flex-wrap">
-            <Link href="/dang-ky-lai-thu" className="btn-red">Đăng ký lái thử ngay</Link>
-            <a href={DEALER_INFO.hotlineLink} className="px-6 py-2.5 rounded font-bold border-2 border-white text-white hover:bg-white hover:text-blue-900 transition-colors">
-              Gọi {DEALER_INFO.hotline}
-            </a>
-          </div>
-        </div>
-      </section>
+      </div>
     </>
   );
 }
