@@ -72,15 +72,19 @@ export default function CarCard({ car }: CarCardProps) {
         <div className="flex gap-1 mt-auto">
           <a
             href={DEALER_INFO.hotlineLink}
-            className="flex-1 text-center py-1.5 text-[10px] sm:text-xs font-bold text-white rounded whitespace-nowrap"
+            className="flex-1 text-center py-1.5 text-[10px] sm:text-xs font-bold text-white rounded whitespace-nowrap transition-all duration-200"
             style={{ background: "var(--vf-blue)" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "#E30613"; (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1.04)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "var(--vf-blue)"; (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)"; }}
           >
             LIÊN HỆ
           </a>
           <Link
             href={`/xe-vinfast/${car.slug}`}
-            className="flex-1 text-center py-1.5 text-[10px] sm:text-xs font-bold rounded border whitespace-nowrap"
+            className="flex-1 text-center py-1.5 text-[10px] sm:text-xs font-bold rounded border whitespace-nowrap transition-all duration-200"
             style={{ borderColor: "var(--vf-blue)", color: "var(--vf-blue)" }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = "var(--vf-blue)"; el.style.color = "#fff"; el.style.transform = "scale(1.04)"; }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.background = ""; el.style.color = "var(--vf-blue)"; el.style.transform = "scale(1)"; }}
           >
             XEM CHI TIẾT
           </Link>
