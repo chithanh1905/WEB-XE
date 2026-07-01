@@ -40,18 +40,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Thông tin */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Sản phẩm</h3>
+            <h3 className="font-bold text-lg mb-4">Thông tin</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              {["VinFast VF 3", "VinFast VF 5", "VinFast VF 6", "VinFast VF 7", "VinFast VF 8", "VinFast VF 9"].map((car) => (
-                <li key={car}>
-                  <Link href={`/xe-vinfast/${car.toLowerCase().replace(/ /g, "-")}`}
-                    className="hover:text-white transition-colors">
-                    {car}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/ve-chung-toi" className="hover:text-white transition-colors">Giới thiệu VinFast VFG Long An</Link></li>
+              <li><Link href="/chinh-sach" className="hover:text-white transition-colors">Chính sách bảo mật & Điều khoản</Link></li>
+              <li><Link href="/dich-vu/chinh-sach-bao-hanh" className="hover:text-white transition-colors">Chính sách bảo hành</Link></li>
+              <li><Link href="/bang-gia" className="hover:text-white transition-colors">Bảng giá</Link></li>
             </ul>
           </div>
 
@@ -65,11 +61,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-2">
                 <svg className="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                <div>
-                  <a href={DEALER_INFO.hotlineLink} className="hover:text-white transition-colors">{DEALER_INFO.hotline}</a>
-                  <br />
-                  <a href={DEALER_INFO.phoneLink} className="hover:text-white transition-colors">{DEALER_INFO.phone}</a>
-                </div>
+                <a href={DEALER_INFO.hotlineLink} className="hover:text-white transition-colors">{DEALER_INFO.hotline}</a>
               </li>
               <li className="flex gap-2">
                 <svg className="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -86,8 +78,9 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-gray-500 text-sm">
           <p>© {new Date().getFullYear()} {DEALER_INFO.name}. Bản quyền được bảo lưu.</p>
           <div className="flex gap-4">
-            <Link href="/chinh-sach-bao-mat" className="hover:text-white transition-colors">Chính sách bảo mật</Link>
-            <Link href="/dieu-khoan" className="hover:text-white transition-colors">Điều khoản sử dụng</Link>
+            <Link href="/chinh-sach" className="hover:text-white transition-colors">Chính sách bảo mật</Link>
+            <Link href="/chinh-sach" className="hover:text-white transition-colors">Điều khoản sử dụng</Link>
+            <Link href="/bang-gia" className="hover:text-white transition-colors">Bảng giá</Link>
           </div>
         </div>
       </div>

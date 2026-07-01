@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { NEWS, PROMOTIONS } from "@/lib/data";
+import { NEWS, PROMOTIONS, DEALER_INFO } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Khuyến mãi – VinFast Long An",
@@ -87,7 +87,7 @@ export default function KhuyenMaiPage() {
         <p className="text-gray-600 mb-6 max-w-md mx-auto">Đăng ký nhận thông báo ưu đãi mới nhất từ VinFast Long An qua hotline hoặc Zalo.</p>
         <div className="flex gap-3 justify-center flex-wrap">
           <Link href="/lien-he" className="btn-red">Đăng ký nhận ưu đãi</Link>
-          <a href="tel:0901234567" className="btn-outline">Gọi hotline</a>
+          <a href={DEALER_INFO.hotlineLink} className="btn-outline">Gọi hotline</a>
         </div>
       </section>
     </>

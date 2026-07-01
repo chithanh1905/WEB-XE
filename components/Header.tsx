@@ -4,11 +4,13 @@ import Link from "next/link";
 import { DEALER_INFO } from "@/lib/data";
 
 const NAV_LINKS = [
-  { href: "/", label: "Trang chủ" },
-  { href: "/xe-vinfast", label: "Xe VinFast" },
+  { href: "/ve-chung-toi", label: "Giới thiệu & Chính sách" },
+  { href: "/xe-vinfast", label: "Ô tô điện" },
+  { href: "/xe-vinfast?group=dich-vu", label: "Dòng xe dịch vụ" },
+  { href: "/lien-he?type=lai-thu", label: "Đăng ký lái thử" },
+  { href: "/dich-vu", label: "Dịch vụ" },
   { href: "/khuyen-mai", label: "Khuyến mãi" },
   { href: "/tin-tuc", label: "Tin tức" },
-  { href: "/ve-chung-toi", label: "Về chúng tôi" },
   { href: "/lien-he", label: "Liên hệ" },
 ];
 
@@ -77,13 +79,6 @@ export default function Header() {
 
             {/* CTA + Hamburger */}
             <div className="flex items-center gap-3">
-              <a
-                href={DEALER_INFO.hotlineLink}
-                className="hidden md:flex btn-primary text-sm py-2.5 px-4"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                {DEALER_INFO.hotline}
-              </a>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="lg:hidden p-2 rounded text-gray-700 hover:bg-gray-100 transition-colors"

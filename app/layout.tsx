@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
+import ConditionalLayout from "@/components/ConditionalLayout";
 import { DEALER_INFO } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -49,10 +47,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <FloatingButtons />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );

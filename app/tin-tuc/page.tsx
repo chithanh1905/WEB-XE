@@ -17,11 +17,11 @@ export default function TinTucPage() {
 
   return (
     <>
-      <div style={{ background: "linear-gradient(135deg, var(--vf-blue-dark), var(--vf-blue))" }} className="py-12 text-white">
+      <div className="py-8">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-sm text-white/70 mb-2">Trang chủ / Tin tức</div>
-          <h1 className="text-3xl md:text-4xl font-black mb-2">Tin tức & Khuyến mãi</h1>
-          <p className="text-white/80">Cập nhật các ưu đãi, tin tức và sự kiện mới nhất từ VinFast Long An</p>
+          <div className="text-sm text-gray-400 mb-2">Trang chủ / Tin tức</div>
+          <h1 className="text-3xl md:text-4xl font-black mb-1 text-gray-900">Tin tức & Khuyến mãi</h1>
+          <p className="text-gray-500">Cập nhật các ưu đãi, tin tức và sự kiện mới nhất từ VinFast Long An</p>
         </div>
       </div>
 
@@ -45,8 +45,15 @@ export default function TinTucPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((item) => (
               <Link key={item.id} href={`/tin-tuc/${item.slug}`} className="group bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="h-52 bg-gradient-to-br from-blue-50 to-blue-100 relative flex items-center justify-center">
-                  <span className="text-5xl">📰</span>
+                <div className="h-52 relative overflow-hidden bg-blue-50">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    }}
+                  />
                   <span
                     className="absolute top-3 left-3 text-xs font-bold px-2.5 py-1 rounded-full text-white"
                     style={{ background: item.category === "khuyen-mai" ? "#E30613" : item.category === "su-kien" ? "#9333EA" : "var(--vf-blue)" }}

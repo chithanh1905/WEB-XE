@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 interface LeadFormProps {
   title?: string;
@@ -16,22 +17,34 @@ export default function LeadForm({
 }: LeadFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // Netlify Forms handles submission automatically
+    setError("");
+
     const form = e.currentTarget;
     const data = new FormData(form);
+
+    const payload = {
+      ho_ten: data.get("ho-ten") as string,
+      so_dien_thoai: data.get("so-dien-thoai") as string,
+      dia_chi: (data.get("dia-chi") as string) || null,
+      xe_quan_tam: (data.get("dong-xe") as string) || (carName || null),
+      ghi_chu: (data.get("ghi-chu") as string) || null,
+    };
+
     try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
-      });
+      const { error: sbError } = await supabase
+        .from("khach_hang_tiem_nang")
+        .insert([payload]);
+
+      if (sbError) throw sbError;
       setSubmitted(true);
-    } catch {
-      alert("Có lỗi xảy ra. Vui lòng thử lại hoặc gọi hotline của chúng tôi.");
+    } catch (err: unknown) {
+      console.error("Supabase error:", err);
+      setError("Có lỗi xảy ra. Vui lòng thử lại hoặc gọi hotline của chúng tôi.");
     } finally {
       setLoading(false);
     }
@@ -56,20 +69,7 @@ export default function LeadForm({
       <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">{title}</h2>
       <p className="text-gray-500 text-sm mb-6">{subtitle}</p>
 
-      <form
-        name={formType}
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-        className="space-y-4"
-      >
-        <input type="hidden" name="form-name" value={formType} />
-        <input type="hidden" name="xe" value={carName} />
-        <p className="hidden">
-          <label>Không điền vào đây: <input name="bot-field" /></label>
-        </p>
-
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="ho-ten">
@@ -101,14 +101,14 @@ export default function LeadForm({
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="email">
-            Email
+          <label className="block text-sm font-semibold text-gray-700 mb-1.5" htmlFor="dia-chi">
+            Địa chỉ
           </label>
           <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="email@example.com"
+            id="dia-chi"
+            name="dia-chi"
+            type="text"
+            placeholder="Số nhà, đường, phường/xã, tỉnh/thành phố"
             className="form-input"
           />
         </div>
@@ -125,6 +125,11 @@ export default function LeadForm({
             <option value="VF7">VinFast VF 7</option>
             <option value="VF8">VinFast VF 8</option>
             <option value="VF9">VinFast VF 9</option>
+            <option value="EC Van">EC Van</option>
+            <option value="Minio Green">Minio Green</option>
+            <option value="Herio Green">Herio Green</option>
+            <option value="Limo Green">Limo Green</option>
+            <option value="VF MPV 7">VF MPV 7</option>
           </select>
         </div>
 
@@ -153,6 +158,12 @@ export default function LeadForm({
             className="form-input resize-none"
           />
         </div>
+
+        {error && (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-sm text-red-700">
+            {error}
+          </div>
+        )}
 
         <button
           type="submit"

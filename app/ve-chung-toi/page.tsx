@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 export default function VeChungToiPage() {
   return (
     <>
-      <div style={{ background: "linear-gradient(135deg, var(--vf-blue-dark), var(--vf-blue))" }} className="py-12 text-white">
+      <div className="py-8">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-sm text-white/70 mb-2">Trang chủ / Về chúng tôi</div>
-          <h1 className="text-3xl md:text-4xl font-black mb-2">Về VinFast Long An</h1>
-          <p className="text-white/80">Đại lý 3S chính hãng – Tận tâm phục vụ khách hàng Long An</p>
+          <div className="text-sm text-gray-400 mb-2">Trang chủ / Về chúng tôi</div>
+          <h1 className="text-3xl md:text-4xl font-black mb-1 text-gray-900">Về VinFast Long An</h1>
+          <p className="text-gray-500">Đại lý 3S chính hãng – Tận tâm phục vụ khách hàng Long An</p>
         </div>
       </div>
 
@@ -87,28 +87,6 @@ export default function VeChungToiPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Team */}
-          <div>
-            <h2 className="section-title text-center mb-2">Đội ngũ của chúng tôi</h2>
-            <p className="text-gray-500 text-center mb-10">Những con người tận tâm đứng sau dịch vụ xuất sắc</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { name: "Nguyễn Văn An", role: "Giám đốc Kinh doanh", avatar: "👨‍💼" },
-                { name: "Trần Thị Bình", role: "Tư vấn Bán hàng cao cấp", avatar: "👩‍💼" },
-                { name: "Lê Minh Cường", role: "Kỹ thuật viên trưởng", avatar: "👨‍🔧" },
-                { name: "Phạm Thu Dung", role: "Chăm sóc Khách hàng", avatar: "👩‍💻" },
-              ].map((member) => (
-                <div key={member.name} className="text-center bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
-                  <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center text-3xl mx-auto mb-3">
-                    {member.avatar}
-                  </div>
-                  <h4 className="font-bold text-gray-900 text-sm">{member.name}</h4>
-                  <p className="text-xs text-gray-500 mt-1">{member.role}</p>
                 </div>
               ))}
             </div>
