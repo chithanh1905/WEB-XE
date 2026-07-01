@@ -18,22 +18,15 @@ export default function HomePage() {
     <>
       <HeroSlider />
 
-      {/* Ô tô điện */}
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-xl font-black mb-6" style={{ color: "var(--vf-blue)" }}>Ô tô điện</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {electricCars.map((car) => <CarCard key={car.id} car={car} />)}
-          </div>
-        </div>
-      </section>
-
-      {/* Dòng xe dịch vụ */}
-      <section className="py-10 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-xl font-black mb-6" style={{ color: "var(--vf-blue)" }}>Dòng xe dịch vụ</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {serviceCars.map((car) => <CarCard key={car.id} car={car} />)}
+      {/* Tất cả xe — 4 cột cố định, full width, liên tiếp như web gốc */}
+      <section className="py-0">
+        <div className="px-0">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0 border-t border-l border-gray-200">
+            {[...electricCars, ...serviceCars].map((car) => (
+              <div key={car.id} className="border-r border-b border-gray-200 bg-white px-2 py-3 flex flex-col">
+                <CarCard car={car} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

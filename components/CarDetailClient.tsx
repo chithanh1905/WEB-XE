@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { CARS, Car, DEALER_INFO } from "@/lib/data";
 
@@ -8,66 +8,17 @@ function formatPrice(n: number) {
 }
 
 function GallerySlider({ images, name }: { images: string[]; name: string }) {
-  const [active, setActive] = useState(0);
-  const thumbsRef = useRef<HTMLDivElement>(null);
-
-  const go = (idx: number) => {
-    const next = Math.max(0, Math.min(images.length - 1, idx));
-    setActive(next);
-    const thumbEl = thumbsRef.current?.children[next] as HTMLElement;
-    thumbEl?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-  };
-
   return (
-    <div>
-      {/* Ảnh lớn full width */}
-      <div className="relative w-full bg-black rounded-xl overflow-hidden mb-3" style={{ aspectRatio: "16/9" }}>
+    <div className="space-y-3">
+      {images.map((img, i) => (
         <img
-          key={active}
-          src={images[active]}
-          alt={`${name} ${active + 1}`}
-          className="w-full h-full object-cover"
-          onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "0"; }}
+          key={i}
+          src={img}
+          alt={`${name} ${i + 1}`}
+          className="w-full rounded-xl object-contain bg-white"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
         />
-        {/* Prev / Next */}
-        {active > 0 && (
-          <button
-            onClick={() => go(active - 1)}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-        )}
-        {active < images.length - 1 && (
-          <button
-            onClick={() => go(active + 1)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-        )}
-        <div className="absolute bottom-3 right-4 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
-          {active + 1} / {images.length}
-        </div>
-      </div>
-      {/* Thumbnail strip */}
-      <div ref={thumbsRef} className="flex gap-2 overflow-x-auto pb-1" style={{ scrollbarWidth: "thin" }}>
-        {images.map((img, i) => (
-          <button
-            key={i}
-            onClick={() => go(i)}
-            className={`shrink-0 rounded-lg overflow-hidden border-2 transition-all ${i === active ? "border-blue-600" : "border-transparent opacity-60 hover:opacity-100"}`}
-            style={{ width: 110, height: 70 }}
-          >
-            <img
-              src={img}
-              alt={`${name} ${i + 1}`}
-              className="w-full h-full object-cover"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "0"; }}
-            />
-          </button>
-        ))}
-      </div>
+      ))}
     </div>
   );
 }
@@ -236,10 +187,6 @@ export default function CarDetailClient({ car }: { car: Car }) {
             {/* Color selector – ảnh lớn + thumbnail kéo trượt */}
             <div>
               <h2 className="text-xl font-black mb-1" style={{ color: "var(--vf-blue)" }}>Chọn màu xe</h2>
-              <p className="text-sm text-gray-500 mb-4">
-                Màu đang chọn: <span className="font-semibold text-blue-700">{car.colorOptions?.[activeColor]?.name}</span>
-              </p>
-
               {/* Ảnh xe lớn */}
               <div className="rounded-xl overflow-hidden bg-white flex items-center justify-center mb-4" style={{ minHeight: 300 }}>
                 <img

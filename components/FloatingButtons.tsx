@@ -36,7 +36,7 @@ export default function FloatingButtons() {
       <div className="fixed z-50 flex flex-col gap-3" style={{ bottom: 16, right: 16 }}>
         {/* Messenger */}
         <a
-          href="https://m.me/trung.pui.965"
+          href="https://www.facebook.com/messages/t/61564536244947"
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
