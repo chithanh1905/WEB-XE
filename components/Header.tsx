@@ -7,7 +7,6 @@ const NAV_LINKS = [
   { href: "/ve-chung-toi", label: "Giới thiệu & Chính sách" },
   { href: "/xe-vinfast", label: "Ô tô điện" },
   { href: "/xe-vinfast?group=dich-vu", label: "Dòng xe dịch vụ" },
-  { href: "/lien-he?type=lai-thu", label: "Đăng ký lái thử" },
   { href: "/dich-vu", label: "Dịch vụ" },
   { href: "/khuyen-mai", label: "Khuyến mãi" },
   { href: "/tin-tuc", label: "Tin tức" },
