@@ -9,49 +9,69 @@ interface CarCardProps {
 }
 
 export default function CarCard({ car }: CarCardProps) {
-  const rangeSpec = car.specs.find(s => s.label === "Phạm vi");
+  const rangeSpec = car.specs.find(s =>
+    s.label.includes("Quãng đường") || s.label.includes("Phạm vi") || s.label.includes("NEDC") || s.label.includes("WLTP")
+  );
+  const rangeLabel = rangeSpec?.label.includes("WLTP") ? "WLTP" : "NEDC";
+
+  // Tên watermark: lấy phần sau "VinFast " (VD: "VF 6", "EC Van")
+  const watermark = car.name.replace("VinFast ", "");
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
-      {/* Image — tỉ lệ 16:9, nền trắng, object-contain */}
-      <div className="relative bg-white overflow-hidden" style={{ paddingTop: "56.25%" }}>
+    <div className="car-card flex flex-col h-full">
+      {/* Ảnh + watermark */}
+      <div className="relative bg-white w-full overflow-hidden" style={{ paddingTop: "70%" }}>
+        {/* Watermark tên xe mờ phía sau */}
+        <span
+          className="absolute inset-0 flex items-center justify-center select-none pointer-events-none font-black uppercase"
+          style={{
+            fontSize: "clamp(2rem, 8vw, 5rem)",
+            color: "rgba(0,91,172,0.07)",
+            letterSpacing: "-0.02em",
+            lineHeight: 1,
+            zIndex: 0,
+          }}
+        >
+          {watermark}
+        </span>
+        {/* Ảnh xe */}
         <img
           src={car.image}
           alt={car.name}
-          className="absolute inset-0 w-full h-full object-contain"
-          onError={(e) => {
-            const img = e.currentTarget;
-            img.style.display = "none";
-            const p = img.parentElement;
-            if (p) p.style.background = "#f0f4ff";
-          }}
+          className="absolute inset-0 w-full h-full object-contain z-10 group-hover:scale-105 transition-transform duration-300"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
         />
       </div>
 
-      {/* Content */}
-      <div className="p-4">
-        <h3 className="text-base font-bold text-gray-900 mb-1">{car.name}</h3>
+      {/* Nội dung */}
+      <div className="flex flex-col flex-1 pt-2 pb-3 px-1">
+        {/* Tên xe */}
+        <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-0.5 leading-tight">{car.name}</h3>
+
+        {/* Thông số km/lần sạc */}
         {rangeSpec && (
-          <p className="text-sm text-gray-500 mb-1">
-            Quãng đường chạy (NEDC): <span className="text-gray-600">{rangeSpec.value}/lần sạc đầy</span>
+          <p className="text-[10px] sm:text-xs text-gray-500 mb-1 leading-snug">
+            Quãng đường chạy ({rangeLabel}): <span className="font-semibold">{rangeSpec.value}</span>
           </p>
         )}
-        <p className="text-base font-bold mb-3" style={{ color: "var(--vf-blue)" }}>
-          {car.price.replace("Từ ", "Từ ")}
+
+        {/* Giá */}
+        <p className="text-xs sm:text-sm font-bold mb-2" style={{ color: "var(--vf-blue)" }}>
+          {car.price}
         </p>
 
-        {/* Buttons */}
-        <div className="flex gap-2">
+        {/* 2 nút cùng hàng, luôn hiện dưới giá */}
+        <div className="flex gap-1 mt-auto">
           <a
             href={DEALER_INFO.hotlineLink}
-            className="flex-1 text-center py-2 px-3 text-sm font-bold text-white rounded"
+            className="flex-1 text-center py-1.5 text-[10px] sm:text-xs font-bold text-white rounded whitespace-nowrap"
             style={{ background: "var(--vf-blue)" }}
           >
             LIÊN HỆ
           </a>
           <Link
             href={`/xe-vinfast/${car.slug}`}
-            className="flex-1 text-center py-2 px-3 text-sm font-bold rounded border-2"
+            className="flex-1 text-center py-1.5 text-[10px] sm:text-xs font-bold rounded border whitespace-nowrap"
             style={{ borderColor: "var(--vf-blue)", color: "var(--vf-blue)" }}
           >
             XEM CHI TIẾT
