@@ -1,6 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
-import { supabase } from "@/lib/supabase";
+import { useState, useCallback } from "react";
 
 interface KhachHang {
   ho_ten: string;
@@ -10,8 +9,6 @@ interface KhachHang {
   ghi_chu?: string;
   created_at?: string;
 }
-
-const ADMIN_PASS = "VinfastLongAn2026";
 
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
@@ -23,22 +20,26 @@ export default function AdminPage() {
   const [search, setSearch] = useState("");
   const [filterXe, setFilterXe] = useState("");
 
-  const fetchData = useCallback(async () => {
+  const fetchData = useCallback(async (password: string) => {
     setLoading(true);
-    const { data: rows, error } = await supabase
-      .from("khach_hang_tiem_nang")
-      .select("*")
-      .order("created_at", { ascending: false });
-    if (!error && rows) setData(rows);
-    setLoading(false);
+    try {
+      const res = await fetch("/api/admin/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+      if (!res.ok) return false;
+      const json = await res.json();
+      setData(json.data || []);
+      return true;
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
-  useEffect(() => {
-    if (authed) fetchData();
-  }, [authed, fetchData]);
-
-  const login = () => {
-    if (pass === ADMIN_PASS) {
+  const login = async () => {
+    const ok = await fetchData(pass);
+    if (ok) {
       setAuthed(true);
       setPassError(false);
     } else {
@@ -129,7 +130,7 @@ export default function AdminPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button onClick={fetchData} className="text-sm px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 flex items-center gap-1.5 font-semibold text-gray-600">
+          <button onClick={() => fetchData(pass)} className="text-sm px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 flex items-center gap-1.5 font-semibold text-gray-600">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
             Làm mới
           </button>
@@ -137,7 +138,7 @@ export default function AdminPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
             Xuất Excel
           </button>
-          <button onClick={() => setAuthed(false)} className="text-sm px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 text-gray-500 font-semibold">
+          <button onClick={() => { setAuthed(false); setPass(""); setData([]); }} className="text-sm px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 text-gray-500 font-semibold">
             Đăng xuất
           </button>
         </div>
