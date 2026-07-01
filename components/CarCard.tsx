@@ -49,7 +49,11 @@ export default function CarCard({ car }: CarCardProps) {
       <div className="flex flex-col flex-1 pt-2 pb-3 px-1">
         {/* Tên xe — click vào tên cũng vào trang chi tiết */}
         <Link href={`/xe-vinfast/${car.slug}`}>
-          <h3 className="text-xs sm:text-sm font-bold text-gray-900 mb-0.5 leading-tight hover:underline cursor-pointer">{car.name}</h3>
+          <h3 className="text-xs sm:text-sm font-bold mb-0.5 leading-tight transition-colors duration-200 cursor-pointer"
+            style={{ color: "var(--vf-blue)" }}
+            onMouseEnter={e => (e.currentTarget.style.color = "#E30613")}
+            onMouseLeave={e => (e.currentTarget.style.color = "var(--vf-blue)")}
+          >{car.name}</h3>
         </Link>
 
         {/* Thông số km/lần sạc */}
