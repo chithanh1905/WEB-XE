@@ -14,14 +14,21 @@ export default function HeroSlider() {
   const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    const cached = sessionStorage.getItem("banner_slides");
+    if (cached) {
+      const data = JSON.parse(cached);
+      setSlides(data.length > 0 ? data : [{ id: 0, anh_url: "/banner1.svg", thu_tu: 0 }]);
+      return;
+    }
     supabase
       .from("banner_config")
       .select("id, anh_url, thu_tu")
       .eq("active", true)
       .order("thu_tu")
       .then(({ data }) => {
-        if (data && data.length > 0) setSlides(data);
-        else setSlides([{ id: 0, anh_url: "/banner1.svg", thu_tu: 0 }]);
+        const slides = data && data.length > 0 ? data : [{ id: 0, anh_url: "/banner1.svg", thu_tu: 0 }];
+        sessionStorage.setItem("banner_slides", JSON.stringify(slides));
+        setSlides(slides);
       });
   }, []);
 
