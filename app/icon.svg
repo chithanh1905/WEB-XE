@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- V shape - dark metallic, no background -->
-  <path d="M50 88 L2 12 H22 L50 68 L78 12 H98 Z" fill="#1C2C4C"/>
-  <path d="M50 78 L10 12 H24 L50 60 L76 12 H90 Z" fill="#3A5A8A"/>
-  <path d="M50 68 L18 12 H28 L50 52 L72 12 H82 Z" fill="#C8D8E8"/>
-</svg>
