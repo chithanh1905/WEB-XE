@@ -1,10 +1,8 @@
 "use client";
 import { useState, useCallback } from "react";
-import dynamic from "next/dynamic";
-
-const BangGiaTab = dynamic(() => import("./BangGiaTab"), { ssr: false });
-const AnhXeTab = dynamic(() => import("./AnhXeTab"), { ssr: false });
-const BannerTab = dynamic(() => import("./BannerTab"), { ssr: false });
+import BangGiaTab from "./BangGiaTab";
+import AnhXeTab from "./AnhXeTab";
+import BannerTab from "./BannerTab";
 
 interface KhachHang {
   ho_ten: string;
@@ -217,9 +215,9 @@ export default function AdminPage() {
           </>
         )}
 
-        {activeTab === "bang-gia" && <BangGiaTab />}
-        {activeTab === "anh-xe" && <AnhXeTab />}
-        {activeTab === "banner" && <BannerTab />}
+        <div className={activeTab === "bang-gia" ? "" : "hidden"}><BangGiaTab /></div>
+        <div className={activeTab === "anh-xe" ? "" : "hidden"}><AnhXeTab /></div>
+        <div className={activeTab === "banner" ? "" : "hidden"}><BannerTab /></div>
       </div>
     </div>
   );
