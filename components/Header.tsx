@@ -76,9 +76,9 @@ export default function Header() {
               <Link
                 href="/dang-ky-lai-thu"
                 className="ml-2 px-3 py-2 rounded text-white text-xs xl:text-sm font-bold whitespace-nowrap hover:opacity-90 transition-opacity"
-                style={{ background: "var(--vf-blue)" }}
+                style={{ background: "#E30613" }}
               >
-                ĐĂNG KÝ LÁI THỬ
+                ĐĂNG KÝ NHẬN ƯU ĐÃI
               </Link>
             </nav>
 

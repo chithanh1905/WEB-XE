@@ -86,7 +86,7 @@ export default function KhuyenMaiPage() {
         <h2 className="text-xl font-bold text-gray-900 mb-3">Đừng bỏ lỡ ưu đãi!</h2>
         <p className="text-gray-600 mb-6 max-w-md mx-auto">Đăng ký nhận thông báo ưu đãi mới nhất từ VinFast Long An qua hotline hoặc Zalo.</p>
         <div className="flex gap-3 justify-center flex-wrap">
-          <Link href="/lien-he" className="btn-red">Đăng ký nhận ưu đãi</Link>
+          <Link href="/dang-ky-lai-thu" className="btn-primary">Đăng ký lái thử</Link>
           <a href={DEALER_INFO.hotlineLink} className="btn-outline">Gọi hotline</a>
         </div>
       </section>
