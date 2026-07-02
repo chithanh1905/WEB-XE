@@ -5,8 +5,8 @@ import { DEALER_INFO } from "@/lib/data";
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/logo-vinfast-vfg.png",
-    apple: "/logo-vinfast-vfg.png",
+    icon: "/favicon-vfg.svg",
+    apple: "/favicon-vfg.svg",
   },
   title: {
     default: `${DEALER_INFO.name} – Đại lý xe điện VinFast chính hãng tại Long An`,
