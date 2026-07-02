@@ -5,7 +5,7 @@ import { CARS } from "@/lib/data";
 
 interface XeConfig {
   id: string;
-  ten: string;
+  ten?: string;
   gia: string;
 }
 
